@@ -1,0 +1,41 @@
+Name: Alseny Diallo
+Email: Alsenidiallo@live.com
+
+File:
+-----
+- hashTable.h (contain hash function delcaration)
+- hashTable.c (Implimentation of the hash function)
+- countWord.c (contain main and hlper function to read word pair)
+- crc64.c     (contain implimention of hash function) by Prof. Dick Lang
+- getWord.h   (contain function declaration for getWord.c)
+- getWord.c   (contain code to read a single word from the given file) by Prof. Dick Lang
+
+Summary: 
+--------
+This program is written (in C) targeted at the Linux platform which reads words from one or more
+files, and prints out a list of the most frequently occurring sequential pairs of words and the number of times they occurred, in decreasing order of occurrence.
+
+Example: 
+--------
+If a file contained the text “This is a nasty assignment and it will take me two weeks to do this
+nasty assignment. I should probably start on it early. I suspect it will take 300-500 lines of code.”, 
+the word pairs “nasty assignment”, “it will” and “will take” would each be detected as having 2 occurrences, while all the other sequential pairs have only one occurrence.
+
+Program interface:
+------------------
+wordpairs <-count> fileName1 <fileName2> <fileName3> ...
+
+Where: count is the integer number of word pairs to print out
+and fileNameN are pathnames from which to read words.
+If no count argument is specified, ALL words pairs are
+printed to stdout. (tokens enclosed in angular brackets
+are optional).
+
+Compile:
+--------
+A make file is provided with the project. call make in oder to build and link the file
+
+Run:
+----
+./wordpairs <-count> fileName1 <fileName2> <fileName3> ...
+./wordpairs -10 mobydick.txt
